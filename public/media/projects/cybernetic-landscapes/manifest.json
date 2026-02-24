@@ -1,0 +1,210 @@
+{
+  "blocks": [
+    {
+      "type": "header",
+      "title": "Cybernetic Landscapes",
+      "subtitle": "Agentic ecological intelligence for long-term land performance.",
+      "badges": [
+        {
+          "label": "Climate Intelligence",
+          "icon": "sparkles"
+        },
+        {
+          "label": "AI-Native Systems",
+          "icon": "cpu"
+        },
+        {
+          "label": "Founding Designer",
+          "icon": "layers"
+        }
+      ],
+      "showHero": true,
+      "heroMedia": {
+        "kind": "image",
+        "src": "hero/hero.png"
+      },
+      "overviewLeft": {
+        "industry": "Climate Technology, Spatial Intelligence, Real Estate & Land Development",
+        "whatIDid": "Product architecture, Strategy, All digital explorations",
+        "toolsUsed": "Figma, React / Next.js, ShadCN, AI prototyping",
+        "year": "2024 - Ongoing"
+      },
+      "overviewRight": {
+        "heading": "Overview",
+        "paragraphs": [
+          "Land Intelligence Engine is a spatial AI system designed to understand, simulate, and guide the long-term performance of land.",
+          "By integrating drone-based LiDAR scans, satellite imagery, environmental sensors, and climate projection data, the system builds a dynamic ecological model of a site.",
+          "The platform combines spatial modeling with predictive ecological simulation to help stakeholders make informed decisions about planting strategies, climate resilience, biodiversity outcomes, and long-term asset performance.",
+          "The ambition is to transform raw environmental data into actionable intelligence \u2014 enabling land to be planned, deployed, and monitored as a living system.",
+          "I am the founding designer, responsible for defining the product architecture, spatial interaction model, and early-stage digital prototypes."
+        ]
+      },
+      "backHref": "/"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "impact",
+      "content": "This is an active work in progress. We are shaping the system architecture, defining interaction paradigms for spatial intelligence, and developing early 3D terrain and monitoring prototypes.\n\nWe are iterating toward product\u2013market fit, refining positioning, and validating measurable outcomes.",
+      "title": "Status"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "imageLarge",
+      "media": {
+        "kind": "image",
+        "src": "sections/overview-visual.png"
+      },
+      "adaptive": true
+    },
+    {
+      "type": "text",
+      "heading": "What the System Does",
+      "content": "The engine operates across four core layers:\n\n1. Observation\nAggregates drone LiDAR, multispectral scans, satellite data, climate projections, and on-site sensor inputs.\n\n2. Modeling\nConstructs a spatial digital twin of the terrain, including soil structure, drainage patterns, solar exposure, and risk zones.\n\n3. Simulation\nRuns long-term ecological succession scenarios and climate stress tests across different intervention strategies.\n\n4. Monitoring\nTracks biodiversity indicators, growth performance, and risk exposure over time \u2014 closing the feedback loop.\n\nThe system is designed to be both predictive and adaptive."
+    },
+    {
+      "type": "imageSmall",
+      "left": {
+        "kind": "image",
+        "src": "sections/system-does-1.png"
+      },
+      "right": {
+        "kind": "image",
+        "src": "sections/system-does-2.png"
+      }
+    },
+    {
+      "type": "imageSmall",
+      "left": {
+        "kind": "image",
+        "src": "sections/system-does-3.png"
+      },
+      "right": {
+        "kind": "image",
+        "src": "sections/system-does-4.png"
+      }
+    },
+    {
+      "type": "imageSmall",
+      "left": {
+        "kind": "image",
+        "src": "sections/system-does-5.png"
+      },
+      "right": {
+        "kind": "image",
+        "src": "sections/system-does-6.png"
+      }
+    },
+    {
+      "type": "imageSmall",
+      "left": {
+        "kind": "image",
+        "src": "sections/system-does-7.png"
+      },
+      "right": {
+        "kind": "image",
+        "src": "sections/system-does-8.png"
+      }
+    },
+    {
+      "type": "imageSmall",
+      "left": {
+        "kind": "image",
+        "src": "sections/system-does-9.png"
+      },
+      "right": {
+        "kind": "image",
+        "src": "sections/system-does-10.png"
+      }
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "text",
+      "heading": "Goal",
+      "content": "The goal is to create an intelligence layer for land.\n\nSpecifically:\n\n- Translate fragmented environmental data into coherent spatial insight\n\n- Simulate ecological succession and climate risk over multi-decade horizons\n\n- Provide site-specific recommendations grounded in soil, hydrology, and microclimate conditions\n\n- Continuously monitor performance through sensor feedback and remote sensing\n\n- Deliver measurable biodiversity, resilience, and ESG outcomes\n\nAt a strategic level, the system aims to shift land development from static planning to adaptive, data-informed stewardship."
+    },
+    {
+      "type": "imageLarge",
+      "media": {
+        "kind": "image",
+        "src": "sections/goal-1.png"
+      }
+    },
+    {
+      "type": "imageLarge",
+      "media": {
+        "kind": "image",
+        "src": "sections/goal-2.png"
+      }
+    },
+    {
+      "type": "imageLarge",
+      "media": {
+        "kind": "image",
+        "src": "sections/goal-3.png"
+      }
+    },
+    {
+      "type": "imageLarge",
+      "media": {
+        "kind": "image",
+        "src": "sections/goal-4.png"
+      }
+    },
+    {
+      "type": "imageLarge",
+      "media": {
+        "kind": "image",
+        "src": "sections/goal-5.png"
+      }
+    },
+    {
+      "type": "imageLarge",
+      "media": {
+        "kind": "image",
+        "src": "sections/goal-6.png"
+      }
+    },
+    {
+      "type": "imageLarge",
+      "media": {
+        "kind": "image",
+        "src": "sections/goal-7.png"
+      }
+    },
+    {
+      "type": "imageLarge",
+      "media": {
+        "kind": "image",
+        "src": "sections/goal-8.png"
+      }
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "text",
+      "heading": "Current Focus",
+      "content": "We are in the validation and product-definition phase.\n\nCurrent priorities include:\n\n- Identifying the primary decision-maker and buying context\n\n- Validating ecological simulation models with domain experts\n\n- Designing the climate-risk interface layer\n\n- Testing integration pipelines for drone, satellite, and sensor data\n\n- Clarifying the balance between product platform and service offering"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "otherProjects"
+    },
+    {
+      "type": "footer",
+      "variant": "default"
+    },
+    {
+      "type": "footer",
+      "variant": "alt"
+    }
+  ]
+}

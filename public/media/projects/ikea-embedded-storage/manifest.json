@@ -1,0 +1,143 @@
+{
+  "blocks": [
+    {
+      "type": "header",
+      "title": "IKEA Embedded Storage Experiences",
+      "subtitle": "Designing how people imagine and interact with storage",
+      "badges": [
+        { "label": "Work in progress", "icon": "clock" },
+        { "label": "Embedded Experiences", "icon": "box" },
+        { "label": "Spatial Interaction Design", "icon": "layers" }
+      ],
+      "showHero": true,
+      "heroMedia": { "kind": "video", "src": "hero/hero.mov" },
+      "heroVideoScale": 1.25,
+      "overviewLeft": {
+        "industry": "Home furnishing, E-commerce, Spatial Computing",
+        "whatIDid": "UX/Product Design, 3D Prototyping, Conceptualisation",
+        "toolsUsed": "Figma, Blender, Three.js",
+        "year": "2025 - ongoing"
+      },
+      "overviewRight": {
+        "heading": "Overview",
+        "paragraphs": [
+          "IKEA is placing a global focus on Store & Organise - one of the most meaningful life-at-home territories. Within the Home Imagination Platform (HIP), I am exploring how storage can be experienced differently across digital IKEA.",
+          "This project explores how we can create an embedded, interactive experience layer across IKEA - one that visualises storage solutions, connects modular systems, and supports effortless exploration. The ambition is to move from simply meeting needs to designing a storage experience that feels cohesive, inspiring, and human."
+        ]
+      },
+      "backHref": "/"
+    },
+    { "type": "divider" },
+    {
+      "type": "imageSmall",
+      "left": { "kind": "video", "src": "sections/embedding-pip-left.mov" },
+      "right": { "kind": "video", "src": "sections/embedding-pip-right.mov" }
+    },
+    {
+      "type": "imageSmall",
+      "left": { "kind": "video", "src": "sections/embedding-pip-2-left.mov" },
+      "right": { "kind": "video", "src": "sections/embedding-pip-2-right.mov" }
+    },
+    {
+      "type": "imageLarge",
+      "media": { "kind": "video", "src": "sections/embedding-pip-large.mov" }
+    },
+    {
+      "type": "text",
+      "heading": "Embedding Spatial Exploration Directly into PIP",
+      "content": "The latest iteration of this project focuses on embedding a lightweight, room-based 3D canvas directly within the Product Information Page (PIP). Rather than directing users into a separate modal or tool, the experience lives inline - as part of the core shopping journey.\n\nThis direction builds on learnings from earlier experiments within Rotera, particularly the \"View in 3D\" modal. Those experiments demonstrated that when customers engage with products spatially, rather than through static images, engagement increases and decision-making becomes more confident.\n\nThe embedded 3D canvas enables users to explore layout variations, switch colours, review dimensions, and interact with components such as doors and drawers in real time. By allowing customers to open cabinets, understand internal storage, and compare variants within a single context, the experience becomes significantly more intuitive than today's static PDP model.\n\nBeyond increasing immersion and engagement, this approach addresses a tangible user pain point: navigating across multiple PIP pages to compare related configurations. Within the embedded canvas, users can explore variations without losing context or resetting their journey.\n\nIn collaboration with Geomagical, we are also exploring how scanning and spatial understanding capabilities can integrate into this layer. Importantly, this canvas is only the first phase of a broader two-part experience. It establishes the foundation for more contextual and intent-driven interactions that extend beyond individual product exploration."
+    },
+    { "type": "divider" },
+    {
+      "type": "imageLarge",
+      "media": { "kind": "video", "src": "sections/canvas-framework.mov" }
+    },
+    {
+      "type": "text",
+      "heading": "Defining the 3D Canvas Interaction Framework",
+      "content": "To support alignment across product, engineering, and partner teams, I documented the canvas interaction model in detail. The intention was to reduce ambiguity and define a coherent interaction system that can scale across IKEA's 3D experiences.\n\nThis documentation articulates the role of the 3D canvas within the HIP Store experience. It defines what the canvas is, and equally, what it is not. It clarifies behavioural states, interaction patterns, and transition logic. It captures key design decisions, trade-offs, and technical considerations.\n\nMore importantly, it aligns business objectives, user value, and feasibility constraints into a shared framework."
+    },
+    { "type": "divider" },
+    {
+      "type": "imageSmall",
+      "left": { "kind": "video", "src": "sections/accessory-discovery-left.mov" },
+      "right": { "kind": "video", "src": "sections/accessory-discovery-right.mov" }
+    },
+    {
+      "type": "text",
+      "heading": "Driving Accessory Discovery Through Spatial Context",
+      "content": "Following the success of complementary look experiments (link to complementary projects) within the 3D modal view, it became clear that visualising products in context directly influences basket size and accessory attachment.\n\nBuilding on earlier initiatives such as the Office Desk and Dining experiences, this iteration focused on enabling customers to compose a complete storage setup - supported by IKEA's furnishing expertise and guided accessory logic.\n\nRather than presenting accessory suggestions as static cross-sell modules, they are surfaced within the 3D environment. Users can add inserts, dividers, lighting, and complementary décor elements directly into the scene. This approach reduces friction associated with navigating multiple PIP pages and mitigates overwhelm from extensive product lists.\n\nThe experience also expands beyond purely functional accessories. It supports relational thinking: how storage interacts with surrounding furniture, décor, and spatial context.\n\nThrough real-time 3D, customers can:\n\n- Evaluate scale and proportion immediately\n- Understand spatial relationships between items\n- Reduce reliance on mental simulation\n\nThis enables more confident decisions and reduces the cognitive load typically associated with system-based purchases."
+    },
+    { "type": "divider" },
+    {
+      "type": "text",
+      "heading": "Other explorations",
+      "content": ""
+    },
+    {
+      "type": "imageSmall",
+      "left": { "kind": "video", "src": "sections/activity-led-entry-1-left.mov" },
+      "right": { "kind": "video", "src": "sections/activity-led-entry-1-right.mov" }
+    },
+    {
+      "type": "imageSmall",
+      "left": { "kind": "video", "src": "sections/activity-led-entry-2-left.mov" },
+      "right": { "kind": "video", "src": "sections/activity-led-entry-2-right.mov" }
+    },
+    {
+      "type": "text",
+      "heading": "Exploration: Activity-Led Entry",
+      "content": "Earlier iterations explored an activity-first model. Instead of beginning with product or object categories, users entered the experience through identified storage situations derived from research.\n\nEach activity allowed users to \"resolve\" a space based on a specific need. For example, organising children's items or preparing for guests - with relevant accessories surfaced accordingly.\n\nWhile conceptually strong, this model introduced scalability challenges across ranges and required clearer mapping between activities and system logic. The learnings from this phase informed the shift toward a more modular, intent-driven backbone."
+    },
+    { "type": "divider" },
+    {
+      "type": "imageSmall",
+      "left": { "kind": "video", "src": "sections/prototyping-motion-1-left.mov" },
+      "right": { "kind": "video", "src": "sections/prototyping-motion-1-right.mov" }
+    },
+    {
+      "type": "imageSmall",
+      "left": { "kind": "video", "src": "sections/prototyping-motion-2-left.mov" },
+      "right": { "kind": "video", "src": "sections/prototyping-motion-2-right.mov" }
+    },
+    {
+      "type": "imageSmall",
+      "left": { "kind": "video", "src": "sections/prototyping-motion-3-left.mov" },
+      "right": { "kind": "video", "src": "sections/prototyping-motion-3-right.mov" }
+    },
+    {
+      "type": "text",
+      "heading": "Prototyping Motion and Spatial Behaviour (three.js/blender)",
+      "content": "To test the boundaries of what the experience could become, I explored advanced motion and interaction prototypes using Three.js and Blender.\n\nThese prototypes examined camera choreography, object transitions, animated insert behaviour, lighting shifts, and interaction feedback. The objective was not decorative animation, but to understand how motion can guide attention and create clarity.\n\nThese explorations served two purposes: they helped communicate spatial ideas effectively with engineering teams, and they elevated the level of digital prototyping within the project. We intentionally explored a wide range of expressive interactions before converging on more restrained motion and subtle camera behaviours that balanced delight with performance realism."
+    },
+    { "type": "divider" },
+    {
+      "type": "imageSmall",
+      "left": { "kind": "video", "src": "sections/directions-deprioritised-1-left.mov" },
+      "right": { "kind": "video", "src": "sections/directions-deprioritised-1-right.mov" }
+    },
+    {
+      "type": "imageSmall",
+      "left": { "kind": "image", "src": "sections/directions-deprioritised-2-left.png" },
+      "right": { "kind": "image", "src": "sections/directions-deprioritised-2-right.png" }
+    },
+    {
+      "type": "imageSmall",
+      "left": { "kind": "image", "src": "sections/directions-deprioritised-3-left.png" },
+      "right": { "kind": "image", "src": "sections/directions-deprioritised-3-right.png" }
+    },
+    {
+      "type": "text",
+      "heading": "Directions Explored and Deprioritised",
+      "content": "A consistent principle throughout the project has been enabling users to fluidly alternate between size, style, and accessories without breaking context. Early explorations focused on different ways to structure this flexibility within the experience.\n\nOne direction replaced photographic thumbnails with line-drawing representations, aiming to simplify visual noise and emphasise system structure over finish. Another tested grouping accessories into curated collections rather than listing them individually, exploring whether composition could feel more guided and less transactional.\n\nWe also experimented with deeper integration of IKEA's home furnishing knowledge directly into the 3D scene. Instead of presenting product attributes as text, information such as cable management placements or soft-close door functionality was surfaced contextually within the spatial environment. The intention was to make system intelligence visible rather than hidden behind specifications.\n\nWhile these directions clarified important principles, especially around contextual knowledge and modular flexibility, they introduced complexity and visual abstraction that did not consistently support clarity at scale. The learnings from these explorations informed the more focused and restrained interaction model pursued in the current direction."
+    },
+    { "type": "divider" },
+    {
+      "type": "impact",
+      "content": "This project is ongoing and has iterated through three concept directions informed by customer interviews and usability research."
+    },
+    { "type": "otherProjects" },
+    { "type": "footer", "variant": "default" },
+    { "type": "footer", "variant": "alt" }
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "blocks": [
+    {
+      "type": "header",
+      "title": "From Single Products to Complementary Sets at IKEA",
+      "subtitle": "A 3D product experience system for IKEA, exploring how spatial commerce can bridge the gap between digital exploration and physical purchase.",
+      "badges": [
+        {
+          "label": "Spatial Product Experience",
+          "icon": "sparkles"
+        },
+        {
+          "label": "3D Commerce Systems",
+          "icon": "cuboid"
+        },
+        {
+          "label": "Progressive Product Exploration",
+          "icon": "layers"
+        }
+      ],
+      "heroMedia": {
+        "kind": "video",
+        "src": "hero/hero.mov",
+        "poster": "posters/hero.jpg"
+      },
+      "overviewLeft": {
+        "industry": "Home furnishing, E-commerce, Spatial Computing",
+        "whatIDid": "UX/Product Design, 3D Prototyping, Conceptualisation",
+        "toolsUsed": "Figma, Blender",
+        "year": "2022 - 2024"
+      },
+      "overviewRight": {
+        "heading": "Exploring the Role of 3D in Product Decisions",
+        "paragraphs": [
+          "Digital product pages have traditionally been built around static images and specifications, even when customers are making inherently spatial decisions - about size, fit, proportion, and how a product relates to their home. This case study explores how 3D can move beyond visual novelty and become a meaningful tool for understanding products in space.",
+          " ",
+          "Over multiple iterations, I worked on evolving IKEA's 3D product experience from a simple viewer into a progressively richer exploration system. Each version intentionally added a new layer of understanding: starting with basic product inspection, then introducing shoppability, dimensional clarity, and finally room-level context through integration with IKEA Kreativ and IKEA Planners."
+        ]
+      },
+      "backHref": "/"
+    },
+    {
+      "type": "imageLarge",
+      "media": {
+        "kind": "video",
+        "src": "sections/section1.mov",
+        "poster": "posters/section1.jpg"
+      }
+    },
+    {
+      "type": "imageSmall",
+      "left": {
+        "kind": "video",
+        "src": "sections/section1-left.mov",
+        "poster": "posters/section1-left.jpg"
+      },
+      "right": {
+        "kind": "video",
+        "src": "sections/section1-right.mov",
+        "poster": "posters/section1-right.jpg"
+      }
+    },
+    {
+      "type": "text",
+      "heading": "Version 1: Establishing the 3D Canvas",
+      "content": "Version 1 defined the baseline: a quiet, reliable 3D canvas focused on viewing the product in three dimensions. Something to test the waters with - that's it.\n\nThe interface remained deliberately quiet. A dedicated modal, framed in neutral lighting, free of decision-making pressure. This allowed the object itself - its form, proportions, and presence to take precedence over the interface surrounding it.\n\nColour variants were integrated directly into the 3D view, enabling quick comparison without breaking focus or context. The interaction was intentionally lightweight: select a variant, observe the change, move on. At this stage, the goal was not configuration.\n\nAn AR entry point was included from the start as a natural extension of the 3D experience. Available when the screen was no longer enough and the product needed to be understood in physical space.\n\nVersion 1 laid the foundations of the system. It set the baseline for all subsequent iterations, allowing later versions to build complexity without losing clarity."
+    },
+    {
+      "type": "impact",
+      "content": "In the first experiment, we tested the impact of removing and reintroducing the \"View in 3D\" button. When the button was present, visitors spent more time on the PIP on average and engaged more deeply by viewing a higher number of product images."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "imageLarge",
+      "media": {
+        "kind": "video",
+        "src": "sections/section1.1.mov",
+        "poster": "posters/section1.1.jpg"
+      }
+    },
+    {
+      "type": "text",
+      "heading": "Version 1.1: Making 3D Part of the Shopping Journey",
+      "content": "With the foundations in place, this iteration brought conversion closer to the surface.\n\nThe add-to-bag action became a clear, primary element of the experience - no longer something that required stepping back out of 3D. The intent was simple: if a customer is confident enough to explore a product in three dimensions, they should be able to act on that confidence without friction.\n\n3D product exploration and shopping were no longer treated as separate modes. Instead, 3D became a natural part of the purchasing flow, sitting alongside familiar IKEA shopping behaviours rather than outside of them.\n\nThis version also expanded how context was explored. When exploring AR view, I tried showing products as they might appear in real, imperfect spaces. Furniture was placed in lived-in environments: rooms with clutter, rooms with pets, rooms that felt occupied or unfinished."
+    },
+    {
+      "type": "impact",
+      "content": "Introducing the Add to Cart button led to a +5.97% uplift in PIP add-to-cart rate. And when real-time availability was added, PIP ATC increased by +6.28%. At this stage, Rotera was contributing approximately +€23.4M in incremental annual revenue."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "imageLarge",
+      "media": {
+        "kind": "video",
+        "src": "sections/section2.mov",
+        "poster": "posters/section2.jpg"
+      }
+    },
+    {
+      "type": "imageSmall",
+      "left": {
+        "kind": "video",
+        "src": "sections/section2-left.mov",
+        "poster": "posters/section2-left.jpg"
+      },
+      "right": {
+        "kind": "video",
+        "src": "sections/section2-right.mov",
+        "poster": "posters/section2-right.jpg"
+      }
+    },
+    {
+      "type": "text",
+      "heading": "Version 2: Making Scale Explicit",
+      "content": "This iteration introduced dimensions directly into the 3D view, anchoring measurements to the product itself rather than pushing them into specifications or tables elsewhere on the page. Height, width, and depth became part of the visual experience.\n\nMeasurements were designed to appear lightly, without overwhelming the product. They surfaced when needed and receded when not, allowing customers to move between visual exploration and practical evaluation without leaving the 3D canvas.\n\nBy placing dimensions on the object, the experience reduced the mental translation customers often have to perform: switching between numbers, imagination, and space.\n\nThis approach was applied across different categories, from storage to lighting, reinforcing that scale matters regardless of product type. Whether tall, wide, or suspended, each product communicated its physical presence directly through the 3D view."
+    },
+    {
+      "type": "impact",
+      "content": "After measurements were introduced, Rotera add-to-cart increased by +11.9%\n\nAt the same time, there was a -9.2% reduction in users opening the measurement accordions on PIP, indicating that surfacing dimensions directly on the 3D model reduced the need to search for that information."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "imageLarge",
+      "media": {
+        "kind": "video",
+        "src": "sections/section3.mov",
+        "poster": "posters/section3.jpg"
+      }
+    },
+    {
+      "type": "imageLarge",
+      "media": {
+        "kind": "image",
+        "src": "sections/section3-centre.jpg"
+      }
+    },
+    {
+      "type": "text",
+      "heading": "Version 3: From Product to Room",
+      "content": "Up to this point, the 3D experience had been centred on the product: how it looks, how big it is, how confidently it can be chosen. Version 3 introduced a new question - how would it look inside a room?\n\nThis was the first time the 3D product view was explicitly linked to IKEA Kreativ. A simple but deliberate toggle allowed customers to move between \"3D view\" and \"Design in a room,\" signalling a shift from isolated inspection to spatial composition.\n\nThe transition into Kreativ was designed to feel continuous. Inside the room view, the selected product appeared already placed, grounded in realistic lighting and scale, surrounded by empty space ready to be shaped.\n\nVersion 3 established the foundations for embedded room experiences at IKEA. It demonstrated how a product-level interaction could naturally extend into room-level design, and how planning tools like Kreativ could be introduced earlier in the shopping journey; without overwhelming users or breaking flow."
+    },
+    {
+      "type": "impact",
+      "content": "This version drove a +27% increase in traffic to Kreativ desktop. More importantly, it served as the foundation for the embedded experiences that followed - bringing planning and room design closer to the core shopping journey and reducing the gap between inspiration and action."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "imageLarge",
+      "media": {
+        "kind": "video",
+        "src": "sections/section3.1.mov",
+        "poster": "posters/section3.1.jpg"
+      }
+    },
+    {
+      "type": "text",
+      "heading": "Version 3.1: Texture swatches",
+      "content": "Alongside the shift into room-based exploration, we also revisited how colour variants were represented. Rather than relying on hex colour swatches or miniature product photos, we introduced a new approach that used close-up images of the product itself - which allowed users to look at the textures."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "imageSmall",
+      "left": {
+        "kind": "video",
+        "src": "sections/section4-left.mov",
+        "poster": "posters/section4-left.jpg"
+      },
+      "right": {
+        "kind": "video",
+        "src": "sections/section4-right.mov",
+        "poster": "posters/section4-right.jpg"
+      }
+    },
+    {
+      "type": "text",
+      "heading": "Version 4: Embedding Planning Tools Without Breaking the Journey",
+      "content": "Planners are powerful, but demanding. Kreativ is spatial and intuitive, but open-ended. This version explored how both could live closer to the product - without forcing users to commit too early.\n\nTo soften the jump into planners, we experimented with a snapshot view. Just enough of the planner to hint at what's possible. Kreativ was brought in with the same restraint. Room selection, early placement, and variant changes happened before entering the full tool."
+    },
+    {
+      "type": "impact",
+      "content": "In a test ran for 14 days.\n\nWe observed a +4.2% uplift in Rotera add-to-cart. Menu clicks to access Kreativ increased by +207.9% (from 5,025 users in Version A to 15,470 in Version B), while clicks to access Planners increased by +233% (from 3,533 to 11,799 users)\n\nAlthough this exact north star version was not launched, these results were achieved through the MVP iteration, which laid the foundation for the more deeply embedded planning experiences developed afterward."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "team"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "otherProjects"
+    },
+    {
+      "type": "footer",
+      "variant": "default"
+    },
+    {
+      "type": "footer",
+      "variant": "alt"
+    }
+  ]
+}

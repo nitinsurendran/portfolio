@@ -1,0 +1,76 @@
+{
+  "blocks": [
+    {
+      "type": "header",
+      "title": "Loop",
+      "subtitle": "A sensory toy system: designed in wood, shaped through 3D printing, and brought to life with embedded interaction.",
+      "badges": [],
+      "showHero": true,
+      "heroMedia": {
+        "kind": "image",
+        "src": "hero/hero.png"
+      },
+      "overviewLeft": {
+        "industry": "Tangible Interaction Design",
+        "whatIDid": "Physical and Digital Product Design, Rapid Prototyping, Embedded Interaction (Sensors + Sound)",
+"toolsUsed": "3D Printing, Electronics, Woodworking tools",
+      "year": "2020"
+      },
+      "overviewRight": {
+        "heading": "Overview",
+        "paragraphs": [
+          "Loop is a tangible interaction study exploring how physical form, material, and motion can mediate emotional regulation through play.",
+          "Inspired by Bill Verplank's interaction design framework: How do you do, feel, and know? The project investigates how simple gestures like spinning, tilting, and rotating can translate into immediate sensory feedback.",
+          "Developed through iterative and rapid prototyping, the final wooden objects bridge digital fabrication and hand-finished craft. Loop positions therapeutic play not as a medical device, but as an everyday object that integrates computation, material intelligence, and embodied interaction."
+        ]
+      },
+      "backHref": "/"
+    },
+    { "type": "divider" },
+    { "type": "imageLarge", "media": { "kind": "image", "src": "sections/large-image.jpg" } },
+    { "type": "imageLarge", "media": { "kind": "image", "src": "sections/large-image-2.jpg" } },
+    { "type": "imageLarge", "media": { "kind": "image", "src": "sections/large-image-3.jpg" } },
+    { "type": "divider" },
+    { "type": "imageLarge", "media": { "kind": "video", "src": "sections/research.mov", "poster": "posters/research.png" } },
+    { "type": "text", "contentKey": "research" },
+    { "type": "divider" },
+    { "type": "imageSmall", "left": { "kind": "image", "src": "sections/co-creation-1.png" }, "right": { "kind": "image", "src": "sections/co-creation-2.png" } },
+    { "type": "imageSmall", "left": { "kind": "image", "src": "sections/co-creation-3.png" }, "right": { "kind": "image", "src": "sections/co-creation-4-texture.png" } },
+    { "type": "text", "contentKey": "coCreationInsights" },
+    { "type": "divider" },
+    { "type": "imageLarge", "media": { "kind": "image", "src": "sections/form.png" } },
+    { "type": "text", "contentKey": "translatingInsightsIntoForm" },
+    { "type": "divider" },
+    { "type": "imageLarge", "media": { "kind": "video", "src": "sections/rhythm-sonic.mov" } },
+    { "type": "imageSmall", "left": { "kind": "image", "src": "sections/rhythm-sonic-small-1.png" }, "right": { "kind": "image", "src": "sections/rhythm-sonic-small-2.png" } },
+    { "type": "text", "contentKey": "exploringRhythmSonicFeedback" },
+    { "type": "divider" },
+    { "type": "imageLarge", "media": { "kind": "video", "src": "sections/technical-interaction.MOV" } },
+    { "type": "imageSmall", "left": { "kind": "image", "src": "sections/technical-small-1.png" }, "right": { "kind": "image", "src": "sections/technical-small-2.png" } },
+    { "type": "text", "contentKey": "exploringTechnicalInteraction" },
+    { "type": "divider" },
+    { "type": "imageSmall", "left": { "kind": "video", "src": "sections/iteration1-small-1.MOV" }, "right": { "kind": "video", "src": "sections/iteration1-small-2.mov" } },
+    { "type": "imageSmall", "left": { "kind": "image", "src": "sections/iteration1-small-3.gif" }, "right": { "kind": "image", "src": "sections/iteration1-small-4.gif" } },
+    { "type": "imageSmall", "left": { "kind": "image", "src": "sections/iteration1-small-5.png" }, "right": { "kind": "image", "src": "sections/iteration1-small-6.png" } },
+    { "type": "text", "contentKey": "iteration1TranslatingGestureIntoForm" },
+    { "type": "divider" },
+    { "type": "imageSmall", "left": { "kind": "video", "src": "sections/iteration2-small-1.MOV" }, "right": { "kind": "video", "src": "sections/iteration2-small-2.MOV" } },
+    { "type": "imageSmall", "left": { "kind": "image", "src": "sections/iteration2-small-3.png" }, "right": { "kind": "image", "src": "sections/iteration2-small-4.png" } },
+    { "type": "text", "contentKey": "iteration2MaterialTranslation" },
+    { "type": "divider" },
+    { "type": "imageLarge", "media": { "kind": "image", "src": "sections/system-integration.png" } },
+    { "type": "imageLarge", "media": { "kind": "image", "src": "sections/system-integration-2.jpg" } },
+    { "type": "imageSmall", "left": { "kind": "video", "src": "sections/system-integration-small-1.MP4" }, "right": { "kind": "image", "src": "sections/system-integration-small-2.png" } },
+    { "type": "text", "contentKey": "systemIntegration" },
+    { "type": "divider" },
+    { "type": "text", "contentKey": "reflection" },
+    { "type": "divider" },
+    { "type": "text", "contentKey": "collaborationMentorship" },
+    { "type": "divider" },
+    { "type": "youtubeEmbed", "videoId": "nXGBoF3fKHE", "title": "YouTube video player" },
+    { "type": "divider" },
+    { "type": "otherProjects" },
+    { "type": "footer", "variant": "default" },
+    { "type": "footer", "variant": "alt" }
+  ]
+}

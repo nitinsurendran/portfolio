@@ -1,0 +1,63 @@
+{
+  "blocks": [
+    {
+      "type": "header",
+      "title": "Digital Rams",
+      "subtitle": "Translating Industrial Design into Spatial Digital Interaction",
+      "badges": [],
+      "showHero": true,
+      "heroMedia": {
+        "kind": "image",
+        "src": "hero/hero.png"
+      },
+      "overviewLeft": {
+        "industry": "Interaction Design / Spatial UI",
+        "whatIDid": "Concept · Prototyping · Motion Design",
+        "toolsUsed": "Origami Studio, Figma, Rotato",
+        "year": "2020"
+      },
+      "backHref": "/"
+    },
+    { "type": "divider" },
+    {
+      "type": "imageSmall",
+      "left": { "kind": "image", "src": "sections/context-1.png" },
+      "right": { "kind": "image", "src": "sections/context-2.png" }
+    },
+    { "type": "text", "contentKey": "context" },
+    { "type": "divider" },
+    {
+      "type": "imageSmall",
+      "left": { "kind": "video", "src": "sections/experience-1.mov" },
+      "right": { "kind": "video", "src": "sections/experience-2.mov" }
+    },
+    {
+      "type": "imageSmall",
+      "left": { "kind": "video", "src": "sections/experience-3.mov" },
+      "right": { "kind": "video", "src": "sections/experience-4.mov" }
+    },
+    {
+      "type": "imageSmall",
+      "left": { "kind": "image", "src": "sections/experience-5.png" },
+      "right": { "kind": "image", "src": "sections/experience-6.png" }
+    },
+    { "type": "text", "contentKey": "experience" },
+    { "type": "divider" },
+    {
+      "type": "imageLarge",
+      "media": { "kind": "image", "src": "sections/Origami.png" }
+    },
+    { "type": "text", "contentKey": "process" },
+    { "type": "divider" },
+    {
+      "type": "youtubeEmbed",
+      "videoId": "ip8pu6pGqUk",
+      "title": "YouTube video player"
+    },
+    { "type": "text", "contentKey": "reflection" },
+    { "type": "divider" },
+    { "type": "otherProjects" },
+    { "type": "footer", "variant": "default" },
+    { "type": "footer", "variant": "alt" }
+  ]
+}

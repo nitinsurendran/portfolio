@@ -1,0 +1,121 @@
+{
+  "blocks": [
+    {
+      "type": "header",
+      "title": "BEAT - Driver's Request Screen",
+      "subtitle": "How small changes in timing, language, and information hierarchy reshaped driver behavior in a real-time marketplace",
+      "badges": [],
+      "showHero": true,
+      "heroMedia": {
+        "kind": "image",
+        "src": "hero/hero.png"
+      },
+      "overviewLeft": {
+        "industry": "Mobility / Ride-hailing",
+        "whatIDid": "UX/Product Design, Cross-functional workshops, Motion Design",
+        "toolsUsed": "Figma, Prototyping, Data dashboards",
+        "year": "2021"
+      },
+      "overviewRight": {
+        "heading": "Overview",
+        "paragraphs": [
+          "In ride-hailing, the driver acceptance screen functions as a marketplace control point where decisions are made under time pressure, uncertainty, and cognitive load. At BEAT, low acceptance rates and repeated request broadcasts revealed that drivers were not unwilling to take rides, but hesitant to act, as rejecting requests felt ambiguous and potentially punitive. Treating the acceptance moment as system infrastructure rather than UI, this project combined behavioral research, marketplace data, and ML-informed experimentation to redesign request pacing, language, and decision hierarchy, resulting in higher acceptance rates, improved ride throughput, and clearer intent signals—without increasing incentives."
+        ]
+      },
+      "backHref": "/"
+    },
+    { "type": "divider" },
+    {
+      "type": "imageLarge",
+      "media": {
+        "kind": "video",
+        "src": "sections/section-placeholder.mov"
+      }
+    },
+    { "type": "text", "contentKey": "challenge" },
+    { "type": "divider" },
+    {
+      "type": "imageLarge",
+      "media": {
+        "kind": "video",
+        "src": "sections/research-footage-placeholder.mov"
+      }
+    },
+    { "type": "text", "contentKey": "researchIntro" },
+    { "type": "quote", "contentKey": "researchQuote1", "size": "large" },
+    { "type": "text", "contentKey": "researchMid" },
+    { "type": "quote", "contentKey": "researchQuote2", "size": "large" },
+    { "type": "text", "contentKey": "researchEnd" },
+    { "type": "divider" },
+    {
+      "type": "imageLarge",
+      "media": { "kind": "image", "src": "sections/evidence-correlation.png" }
+    },
+    {
+      "type": "imageLarge",
+      "media": { "kind": "image", "src": "sections/evidence-data-viz.png" }
+    },
+    { "type": "text", "contentKey": "evidence" },
+    { "type": "divider" },
+    { "type": "text", "contentKey": "framingIntro" },
+    { "type": "quote", "contentKey": "framingHMW", "size": "large" },
+    {
+      "type": "imageLarge",
+      "media": { "kind": "image", "src": "sections/systems-diagram-placeholder.png" }
+    },
+    { "type": "text", "contentKey": "framingOutro" },
+    { "type": "divider" },
+    {
+      "type": "imageLarge",
+      "media": { "kind": "image", "src": "sections/pacing-experiment-placeholder.png" }
+    },
+    { "type": "text", "contentKey": "intervention1" },
+    {
+      "type": "imageLarge",
+      "media": { "kind": "image", "src": "sections/experiment-metrics-placeholder.png" }
+    },
+    { "type": "text", "contentKey": "intervention2" },
+    { "type": "divider" },
+    {
+      "type": "imageLarge",
+      "media": { "kind": "image", "src": "sections/transition-visual-placeholder.png" }
+    },
+    { "type": "text", "contentKey": "fromMicroInterventions" },
+    { "type": "divider" },
+    {
+      "type": "beforeAfterMediaSlider",
+      "beforeSrc": "sections/map-before.png",
+      "beforeImageVersion": "2",
+      "afterVideoSrc": "sections/map-after.mov",
+      "posterSrc": "posters/map-after.png"
+    },
+    { "type": "text", "contentKey": "theMap" },
+    { "type": "divider" },
+    { "type": "text", "contentKey": "increasingAffordance" },
+    {
+      "type": "imageSmall",
+      "left": { "kind": "image", "src": "sections/affordance-exploration-1.png" },
+      "right": { "kind": "image", "src": "sections/affordance-exploration-2.png" }
+    },
+    {
+      "type": "imageSmall",
+      "left": { "kind": "image", "src": "sections/affordance-exploration-3.png" },
+      "right": { "kind": "image", "src": "sections/affordance-exploration-4.png" }
+    },
+    { "type": "text", "contentKey": "designingForDeliberateAction" },
+    {
+      "type": "imageLarge",
+      "media": { "kind": "image", "src": "sections/final.png" }
+    },
+    { "type": "text", "contentKey": "finalAcceptanceScreen" },
+    { "type": "divider" },
+    {
+      "type": "impact",
+      "content": "Across test markets, the combined interventions produced higher acceptance rates, increased ride throughput, and fewer unnecessary rebroadcasts. Drivers reported clearer expectations and less hesitation at the moment of decision."
+    },
+    { "type": "team" },
+    { "type": "otherProjects" },
+    { "type": "footer", "variant": "default" },
+    { "type": "footer", "variant": "alt" }
+  ]
+}

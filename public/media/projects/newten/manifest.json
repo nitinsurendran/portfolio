@@ -1,0 +1,89 @@
+{
+  "blocks": [
+    {
+      "type": "header",
+      "title": "NewTen",
+      "subtitle": "A physical interface for tuning credible news by distance, allowing you to explore information at different geographical scales.",
+      "badges": [],
+      "showHero": true,
+      "heroMedia": {
+        "kind": "image",
+        "src": "hero/hero.png"
+      },
+      "overviewLeft": {
+        "industry": "Speculative Design, Tangible Interaction, Physical Device",
+        "whatIDid": "Physical Prototyping, Physical Computing",
+        "toolsUsed": "Arduino Uno, Processing (P3), 3D Printing"
+      },
+      "backHref": "/"
+    },
+    { "type": "divider" },
+    { "type": "text", "contentKey": "objective" },
+    { "type": "divider" },
+    {
+      "type": "imageSmall",
+      "left": { "kind": "image", "src": "sections/early-prototypes-1.avif" },
+      "right": { "kind": "image", "src": "sections/early-prototypes-2.avif" }
+    },
+    {
+      "type": "imageSmall",
+      "left": { "kind": "image", "src": "sections/early-prototypes-3.avif" },
+      "right": { "kind": "image", "src": "sections/early-prototypes-4.avif" }
+    },
+    { "type": "text", "contentKey": "earlyPrototypes" },
+    { "type": "divider" },
+    { "type": "text", "contentKey": "evolution" },
+    { "type": "divider" },
+    {
+      "type": "imageLarge",
+      "media": { "kind": "image", "src": "sections/before-interaction-1.jpg" }
+    },
+    {
+      "type": "imageLarge",
+      "media": { "kind": "image", "src": "sections/before-interaction-2.jpg" }
+    },
+    {
+      "type": "imageLarge",
+      "media": { "kind": "image", "src": "sections/before-interaction-3.jpg" }
+    },
+    { "type": "text", "contentKey": "interaction" },
+    { "type": "divider" },
+    {
+      "type": "imageLarge",
+      "media": { "kind": "image", "src": "sections/technology-1.jpg" }
+    },
+    {
+      "type": "imageLarge",
+      "media": { "kind": "image", "src": "sections/technology-2.jpg" }
+    },
+    {
+      "type": "imageLarge",
+      "media": { "kind": "image", "src": "sections/technology-3.jpg" }
+    },
+    {
+      "type": "imageLarge",
+      "media": { "kind": "image", "src": "sections/technology-4.gif" }
+    },
+    { "type": "text", "contentKey": "technology" },
+    { "type": "divider" },
+    {
+      "type": "imageLarge",
+      "media": { "kind": "image", "src": "sections/design-1.jpg" }
+    },
+    {
+      "type": "imageLarge",
+      "media": { "kind": "image", "src": "sections/design-2.jpg" }
+    },
+    { "type": "text", "contentKey": "designMicroInteractions" },
+    { "type": "divider" },
+    {
+      "type": "vimeoEmbed",
+      "videoId": "430400514",
+      "title": "newTen"
+    },
+    { "type": "divider" },
+    { "type": "otherProjects" },
+    { "type": "footer", "variant": "default" },
+    { "type": "footer", "variant": "alt" }
+  ]
+}
