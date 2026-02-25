@@ -4,11 +4,11 @@ import { Activity, ArrowRight, Clock, Cuboid, Cpu, FlaskConical, Hand, Layers, B
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import Link from "next/link";
-import { ComponentType, useRef, useEffect, useLayoutEffect } from "react";
+import { ComponentType, useRef, useEffect, useLayoutEffect, useState } from "react";
 import { gsap } from "gsap";
 import { useTheme } from "next-themes";
 import { setStoredThemeBeforeDetail } from "@/lib/theme-detail";
-import { prefersLowBandwidth } from "@/lib/media/bandwidth";
+import { prefersLowBandwidth, shouldUseVideoThumb } from "@/lib/media/bandwidth";
 
 type BadgeItem = {
   label: string;
@@ -59,10 +59,43 @@ export function ProjectCard({ slug, title, description, badges, year, videoSrc, 
   const arrowX = useRef<((value: number) => void) | null>(null);
   const arrowY = useRef<((value: number) => void) | null>(null);
   const isMagneticActiveRef = useRef<boolean>(false);
+  const [allowVideoThumb, setAllowVideoThumb] = useState<boolean | null>(null);
+  const [showVideo, setShowVideo] = useState(false);
+
+  // Decide once per mount whether this environment should use video thumbnails.
+  useEffect(() => {
+    if (!videoSrc) {
+      setAllowVideoThumb(null);
+      return;
+    }
+    setAllowVideoThumb(shouldUseVideoThumb());
+  }, [videoSrc]);
+
+  // When video thumbnails are allowed, mount the <video> only when the card is near the viewport.
+  useEffect(() => {
+    if (!videoSrc) return;
+    if (allowVideoThumb !== true) return;
+    if (!cardRef.current) return;
+
+    const el = cardRef.current;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (entry?.isIntersecting) {
+          setShowVideo(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px 0px", threshold: 0.01 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [videoSrc, allowVideoThumb]);
 
   // Viewport-based video autoplay with IntersectionObserver (skip when Save-Data or slow connection)
   useEffect(() => {
-    if (!videoSrc || !videoRef.current) return;
+    if (!videoSrc || !showVideo || !videoRef.current) return;
     if (prefersLowBandwidth()) return;
 
     const video = videoRef.current;
@@ -143,7 +176,7 @@ export function ProjectCard({ slug, title, description, badges, year, videoSrc, 
       }
       document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
-  }, [videoSrc]);
+  }, [videoSrc, showVideo]);
 
   // GSAP hover animation - minimal and flat (no shadow, no scale)
   useLayoutEffect(() => {
@@ -409,6 +442,11 @@ export function ProjectCard({ slug, title, description, badges, year, videoSrc, 
 
   const projectHref = fromTab === "experiments" ? `/projects/${slug}?from=experiments` : `/projects/${slug}`;
 
+  const placeholderImageSrc =
+    thumbnailSrc || (videoSrc ? `/media/projects/${slug}/hero/hero-placeholder.svg` : undefined);
+
+  const shouldRenderVideo = !!videoSrc && allowVideoThumb === true && showVideo;
+
   return (
     <Link 
       href={projectHref} 
@@ -437,7 +475,7 @@ export function ProjectCard({ slug, title, description, badges, year, videoSrc, 
 
         {/* Hero Media Container: video or thumbnail image, aspect-ratio 16/10 */}
         <div className="relative w-full aspect-[16/10] rounded-lg overflow-hidden bg-background">
-          {videoSrc ? (
+          {shouldRenderVideo ? (
             <video
               ref={videoRef}
               src={videoSrc}
@@ -446,12 +484,13 @@ export function ProjectCard({ slug, title, description, badges, year, videoSrc, 
               playsInline
               autoPlay
               preload="metadata"
+              poster={placeholderImageSrc}
               className="w-full h-full object-cover"
               style={thumbnailVideoScale != null ? { transform: `scale(${thumbnailVideoScale})` } : undefined}
             />
-          ) : thumbnailSrc ? (
+          ) : placeholderImageSrc ? (
             <Image
-              src={thumbnailSrc}
+              src={placeholderImageSrc}
               alt=""
               fill
               className="object-cover"

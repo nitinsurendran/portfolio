@@ -10,3 +10,28 @@ export function prefersLowBandwidth(): boolean {
   if (et === "slow-2g" || et === "2g" || et === "3g") return true;
   return false;
 }
+
+/**
+ * Decide whether to use video thumbnails on the homepage.
+ * Returns false when motion should be reduced or connection is very slow / Save-Data is enabled.
+ */
+export function shouldUseVideoThumb(): boolean {
+  if (typeof window === "undefined") return true;
+
+  // Respect reduced motion preference
+  const prefersReducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+  if (prefersReducedMotion) return false;
+
+  // Network Information API – feature-detect
+  if (typeof navigator !== "undefined") {
+    const conn = (navigator as Navigator & { connection?: ConnectionLike }).connection;
+    if (conn) {
+      if (conn.saveData === true) return false;
+      const et = conn.effectiveType;
+      if (et === "slow-2g" || et === "2g") return false;
+    }
+  }
+
+  // Default: use video thumbnails
+  return true;
+}
