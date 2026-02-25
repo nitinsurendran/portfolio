@@ -43,6 +43,9 @@ export const metadata: Metadata = {
       "Portfolio of Nitin Surendran, an interaction designer crafting 3D, spatial, and AI-powered product experiences across commerce, mobility, and immersive systems.",
     images: ["/og.jpg"],
   },
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
