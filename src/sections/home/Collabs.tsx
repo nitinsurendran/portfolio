@@ -9,23 +9,35 @@ export function Collabs() {
         <h2 className="font-sans text-xl font-semibold text-foreground">
           I've collab'd in the past with:
         </h2>
-        <div className="flex flex-wrap items-center gap-x-6 gap-y-2 md:gap-x-8 md:gap-y-3">
+        <div className="flex items-center w-full">
           {Array.from({ length: 5 }).map((_, index) => {
             const src = `/media/collabs/logo-${index + 1}.png`;
             const alt = `Collaborator ${index + 1} logo`;
+            const isLogo5 = index === 4;
+            const logoBoxClass = isLogo5
+              ? "flex h-5 w-20 items-center justify-center shrink-0 md:h-6 md:w-24"
+              : "flex h-8 w-20 items-center justify-center shrink-0 md:h-10 md:w-24";
             return (
-              <div
-                key={index}
-                className="flex items-center shrink-0"
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={src}
-                  alt={alt}
-                  className="h-6 w-auto max-w-none object-contain opacity-90 transition-opacity hover:opacity-100 md:h-8"
-                  loading="lazy"
-                />
-              </div>
+              <span key={index} className="contents">
+                <div className={logoBoxClass}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={src}
+                    alt={alt}
+                    className="max-h-full max-w-full object-contain opacity-90 transition-opacity hover:opacity-100"
+                    loading="lazy"
+                  />
+                </div>
+                {index < 4 && (
+                  <div
+                    className="flex flex-1 min-w-[4px] justify-center items-center"
+                    aria-hidden
+                  >
+                    {/* Gap marker: same width gap = marker centered in equal space */}
+                    <span className="w-0.5 h-6 bg-slate-500/25 rounded-full shrink-0" />
+                  </div>
+                )}
+              </span>
             );
           })}
         </div>
