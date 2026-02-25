@@ -7,22 +7,22 @@ export function Collabs() {
       {/* Figma node: 7314-6986 (Collaboration section) */}
       <div className="space-y-4">
         <h2 className="font-sans text-xl font-semibold text-foreground">
-          I've collaborated in the past with
+          I've collab'd in the past with:
         </h2>
-        <div className="flex flex-wrap items-center gap-2 md:gap-3">
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-2 md:gap-x-8 md:gap-y-3">
           {Array.from({ length: 5 }).map((_, index) => {
             const src = `/media/collabs/logo-${index + 1}.png`;
             const alt = `Collaborator ${index + 1} logo`;
             return (
               <div
                 key={index}
-                className="flex h-12 md:h-14 items-center"
+                className="flex items-center shrink-0"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={src}
                   alt={alt}
-                  className="max-h-10 md:max-h-12 w-auto object-contain"
+                  className="h-6 w-auto max-w-none object-contain opacity-90 transition-opacity hover:opacity-100 md:h-8"
                   loading="lazy"
                 />
               </div>
