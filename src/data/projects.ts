@@ -141,7 +141,7 @@ export const workProjects: Project[] = [
     type: "work",
     media: {
       type: "video",
-      src: "/media/projects/beat/hero/hero.mov",
+      src: "/media/projects/beat/hero/hero.mp4",
     },
   },
   // 5. Cybernetic Landscapes
