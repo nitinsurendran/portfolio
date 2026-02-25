@@ -29,6 +29,14 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
+## Google Analytics 4
+
+The app uses GA4 via gtag.js when a measurement ID is provided.
+
+- **Enable GA:** In [Vercel](https://vercel.com) go to your project → **Settings** → **Environment Variables**. Add `NEXT_PUBLIC_GA_ID` with your GA4 measurement ID (e.g. `G-XXXXXXXXXX`). Redeploy so the variable is inlined at build time.
+- **Behaviour:** GA scripts load only in production unless `NEXT_PUBLIC_GA_DEBUG=true` is set. If `NEXT_PUBLIC_GA_ID` is missing, no GA scripts are injected. Page views are sent on initial load and on client-side route changes.
+- **Verify:** In [Google Analytics](https://analytics.google.com), open **Reports** → **Realtime** and navigate the site; you should see active users and page views.
+
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.

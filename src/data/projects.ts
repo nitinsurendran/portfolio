@@ -140,8 +140,8 @@ export const workProjects: Project[] = [
     year: "2021",
     type: "work",
     media: {
-      type: "image",
-      src: "/media/projects/beat/hero/hero.png",
+      type: "video",
+      src: "/media/projects/beat/hero/hero.mov",
     },
   },
   // 5. Cybernetic Landscapes

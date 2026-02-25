@@ -83,10 +83,6 @@ const IMAGE_THE_EXPERIENCE_6 = {
   kind: "video" as const,
   src: "sections/the-experience-6.mov",
 };
-const IMAGE_THE_EXPERIENCE_7 = {
-  kind: "video" as const,
-  src: "sections/the-experience-7.mov",
-};
 /** Image above "Role of AI" */
 const IMAGE_ROLE_OF_AI = {
   kind: "image" as const,
@@ -183,7 +179,6 @@ function getBlocks(overview?: ProjectOverviewContent): Block[] {
     { type: "imageLarge", media: IMAGE_THE_EXPERIENCE_4 },
     { type: "imageLarge", media: IMAGE_THE_EXPERIENCE_5 },
     { type: "imageLarge", media: IMAGE_THE_EXPERIENCE_6 },
-    { type: "imageLarge", media: IMAGE_THE_EXPERIENCE_7 },
     {
       type: "text",
       contentKey: "theExperience",

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 // Geist uses CSS variables with font-display: swap for fast text render
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
@@ -7,6 +8,8 @@ import { TopBlurBar } from "@/components/ui/TopBlurBar";
 import ClientProviders from "./client-providers";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
+import { AnalyticsPageView } from "@/components/analytics/AnalyticsPageView";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,13 +28,17 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className={`${GeistSans.className} antialiased`}>
+        <GoogleAnalytics />
         <ThemeProvider>
           <ClientProviders>
+            <AnalyticsPageView />
             <TopBlurBar />
             <div className="fixed top-4 right-4 z-[10000]">
               <ThemeToggle />
             </div>
-            {children}
+            <Suspense fallback={null}>
+              {children}
+            </Suspense>
           </ClientProviders>
         </ThemeProvider>
       </body>

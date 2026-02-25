@@ -19,7 +19,6 @@ export type ProjectBlock =
   | { type: "Body"; content: string[]; heading?: string } // paragraphs as array, preserves line breaks
   | { type: "Divider" }
   | { type: "Impact" }
-  | { type: "Team" }
   | { type: "OtherProjects" }
   | { type: "Footer"; variant?: "default" | "alt" };
 

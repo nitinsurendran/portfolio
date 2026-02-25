@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ProjectCard } from "./ProjectCard";
 import { Collabs } from "./Collabs";
@@ -8,7 +9,11 @@ import { Footer } from "./Footer";
 import { workProjects, experimentProjects } from "@/data/projects";
 
 export function SelectProjects() {
-  const [activeTab, setActiveTab] = useState("work");
+  const searchParams = useSearchParams();
+  const tabFromUrl = searchParams.get("tab");
+  const [activeTab, setActiveTab] = useState<"work" | "experiments">(
+    tabFromUrl === "experiments" ? "experiments" : "work"
+  );
   const [pillStyle, setPillStyle] = useState<{ left: number; width: number }>({ left: 0, width: 0 });
   const tabsListRef = useRef<HTMLDivElement>(null);
   const workTriggerRef = useRef<HTMLButtonElement>(null);
@@ -37,6 +42,12 @@ export function SelectProjects() {
     });
     return () => cancelAnimationFrame(rafId);
   }, [updatePillPosition]);
+
+  // When landing with ?tab=experiments (e.g. back from experiment project), show Experiments tab
+  useEffect(() => {
+    const t = searchParams.get("tab");
+    if (t === "experiments" && activeTab !== "experiments") setActiveTab("experiments");
+  }, [searchParams, activeTab]);
 
   // Update pill position when active tab changes or window resizes
   useEffect(() => {
@@ -67,7 +78,11 @@ export function SelectProjects() {
           {/* Matches Intro/Description typography but with bold weight */}
           Selected Projects:
         </h2>
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+        <Tabs
+          value={activeTab}
+          onValueChange={(v) => setActiveTab(v === "experiments" ? "experiments" : "work")}
+          className="w-full"
+        >
           <div className="relative" ref={tabsListRef}>
             <TabsList className="rounded-full p-1">
               <TabsTrigger 
@@ -111,6 +126,7 @@ export function SelectProjects() {
                     videoSrc={project.media?.type === "video" ? project.media.src : undefined}
                     thumbnailSrc={project.media?.type === "image" ? project.media.src : undefined}
                     thumbnailVideoScale={project.thumbnailVideoScale}
+                    fromTab="work"
                   />
                 </div>
               ))}
@@ -134,6 +150,7 @@ export function SelectProjects() {
                     videoSrc={project.media?.type === "video" ? project.media.src : undefined}
                     thumbnailSrc={project.media?.type === "image" ? project.media.src : undefined}
                     thumbnailVideoScale={project.thumbnailVideoScale}
+                    fromTab="experiments"
                   />
                 </div>
               ))}

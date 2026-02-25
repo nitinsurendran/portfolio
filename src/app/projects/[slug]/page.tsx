@@ -20,7 +20,6 @@ import { ProjectOverview } from "@/sections/project-details/rotera/ProjectOvervi
 import { ImageLarge } from "@/sections/project-details/rotera/ImageLarge";
 import { ImageSmall } from "@/sections/project-details/rotera/ImageSmall";
 import { Body } from "@/sections/project-details/rotera/Body";
-import { Team } from "@/sections/project-details/rotera/Team";
 import { Impact } from "@/sections/project-details/rotera/Impact";
 import { OtherProjects } from "@/sections/project-details/rotera/OtherProjects";
 import { rotera } from "@/content/projects/rotera";
@@ -108,8 +107,6 @@ export default function ProjectPage() {
         );
       case "Impact":
         return <Impact key={index} />;
-      case "Team":
-        return <Team key={index} />;
       case "OtherProjects":
         return <OtherProjects key={index} />;
       case "Footer":
@@ -201,7 +198,6 @@ To soften the jump into planners, we experimented with a snapshot view. Just eno
           <ImageSmall />
           <Body content={bodyContent6} heading="Version 4: Embedding Planning Tools Without Breaking the Journey" />
           <Impact />
-          <Team />
           <div className="py-[10px]">
             <Separator className="h-px" />
           </div>

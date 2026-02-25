@@ -18,7 +18,6 @@ import { QuoteBlock } from "@/components/blocks/QuoteBlock";
 import { StatsBlock } from "@/components/blocks/StatsBlock";
 import { BeforeAfterMediaSlider } from "@/components/BeforeAfterMediaSlider";
 import { Impact } from "@/sections/project-details/rotera/Impact";
-import { Team } from "@/sections/project-details/rotera/Team";
 import { OtherProjects } from "@/sections/project-details/rotera/OtherProjects";
 import { Footer } from "@/sections/home/Footer";
 import { initReveal } from "@/lib/gsap/reveal";
@@ -55,7 +54,7 @@ type ManifestBlock =
       backHref?: string;
     }
   | { type: "hero"; media: { kind: "image" | "video"; src: string; poster?: string } }
-  | { type: "imageLarge"; media: { kind: "image" | "video"; src: string; poster?: string }; width?: number }
+  | { type: "imageLarge"; media: { kind: "image" | "video"; src: string; poster?: string }; width?: number; objectFit?: "contain" | "cover" }
   | {
       type: "beforeAfterMediaSlider";
       beforeSrc: string;
@@ -79,7 +78,6 @@ type ManifestBlock =
   | { type: "spacer" }
   | { type: "divider" }
   | { type: "impact"; content?: string }
-  | { type: "team" }
   | { type: "otherProjects" }
   | { type: "footer"; variant?: "default" | "alt" };
 
@@ -117,7 +115,7 @@ function renderBlock(
     case "hero":
       return <HeroBlock key={index} media={block.media} />;
     case "imageLarge":
-      return <ImageLargeBlock key={index} media={block.media} width={block.width} />;
+      return <ImageLargeBlock key={index} media={block.media} width={block.width} objectFit={block.objectFit} />;
     case "beforeAfterMediaSlider":
       return (
         <BeforeAfterMediaSlider
@@ -173,8 +171,6 @@ function renderBlock(
       return <DividerBlock key={index} />;
     case "impact":
       return <Impact key={index} content={block.content} />;
-    case "team":
-      return <Team key={index} />;
     case "otherProjects":
       return <OtherProjects key={index} />;
     case "footer":

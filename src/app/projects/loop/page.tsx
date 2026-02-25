@@ -18,7 +18,6 @@ import { YoutubeEmbedBlock } from "@/components/blocks/YoutubeEmbedBlock";
 import { QuoteBlock } from "@/components/blocks/QuoteBlock";
 import { StatsBlock } from "@/components/blocks/StatsBlock";
 import { Impact } from "@/sections/project-details/rotera/Impact";
-import { Team } from "@/sections/project-details/rotera/Team";
 import { OtherProjects } from "@/sections/project-details/rotera/OtherProjects";
 import { Footer } from "@/sections/home/Footer";
 import { initReveal } from "@/lib/gsap/reveal";
@@ -72,7 +71,6 @@ type ManifestBlock =
   | { type: "divider" }
   | { type: "youtubeEmbed"; videoId: string; title?: string }
   | { type: "impact" }
-  | { type: "team" }
   | { type: "otherProjects" }
   | { type: "footer"; variant?: "default" | "alt" };
 
@@ -157,8 +155,6 @@ function renderBlock(
       return <YoutubeEmbedBlock key={index} videoId={block.videoId} title={block.title} />;
     case "impact":
       return <Impact key={index} />;
-    case "team":
-      return <Team key={index} />;
     case "otherProjects":
       return <OtherProjects key={index} />;
     case "footer":

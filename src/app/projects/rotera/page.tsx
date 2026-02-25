@@ -15,7 +15,6 @@ import { SpacerBlock } from "@/components/blocks/SpacerBlock";
 import { HeaderBlock } from "@/components/blocks/HeaderBlock";
 import { DividerBlock } from "@/components/blocks/DividerBlock";
 import { Impact } from "@/sections/project-details/rotera/Impact";
-import { Team } from "@/sections/project-details/rotera/Team";
 import { OtherProjects } from "@/sections/project-details/rotera/OtherProjects";
 import { Footer } from "@/sections/home/Footer";
 import { initReveal } from "@/lib/gsap/reveal";
@@ -54,7 +53,6 @@ type ManifestBlock =
   | { type: "spacer" }
   | { type: "divider" }
   | { type: "impact"; content?: string }
-  | { type: "team" }
   | { type: "otherProjects" }
   | { type: "footer"; variant?: "default" | "alt" };
 
@@ -102,8 +100,6 @@ function renderBlock(
       return <DividerBlock key={index} />;
     case "impact":
       return <Impact key={index} content={block.content} />;
-    case "team":
-      return <Team key={index} />;
     case "otherProjects":
       return <OtherProjects key={index} />;
     case "footer":

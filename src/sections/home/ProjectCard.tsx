@@ -41,9 +41,11 @@ type ProjectCardProps = {
   thumbnailSrc?: string;
   /** Zoom for card video (e.g. 1.25) so subject appears closer; frame crops edges. */
   thumbnailVideoScale?: number;
+  /** When "experiments", link includes ?from=experiments so back returns to Experiments tab. */
+  fromTab?: "work" | "experiments";
 };
 
-export function ProjectCard({ slug, title, description, badges, year, videoSrc, thumbnailSrc, thumbnailVideoScale }: ProjectCardProps) {
+export function ProjectCard({ slug, title, description, badges, year, videoSrc, thumbnailSrc, thumbnailVideoScale, fromTab }: ProjectCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const { resolvedTheme } = useTheme();
   const ringRef = useRef<HTMLDivElement>(null);
@@ -405,9 +407,11 @@ export function ProjectCard({ slug, title, description, badges, year, videoSrc, 
     };
   }, []);
 
+  const projectHref = fromTab === "experiments" ? `/projects/${slug}?from=experiments` : `/projects/${slug}`;
+
   return (
     <Link 
-      href={`/projects/${slug}`} 
+      href={projectHref} 
       className="block no-underline rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
       onClick={() => {
         if (resolvedTheme === "light" || resolvedTheme === "dark") {
@@ -440,7 +444,8 @@ export function ProjectCard({ slug, title, description, badges, year, videoSrc, 
               muted
               loop
               playsInline
-              preload="auto"
+              autoPlay
+              preload="metadata"
               className="w-full h-full object-cover"
               style={thumbnailVideoScale != null ? { transform: `scale(${thumbnailVideoScale})` } : undefined}
             />

@@ -18,9 +18,11 @@ type ImageLargeBlockProps = {
   width?: number; // Default 960px
   /** When true, container has no fixed aspect ratio — image dictates height (e.g. long/tall images). */
   adaptive?: boolean;
+  /** "cover" fills frame (default); "contain" fits full media in frame. */
+  objectFit?: "contain" | "cover";
 };
 
-export function ImageLargeBlock({ media, width = 960, adaptive = false }: ImageLargeBlockProps) {
+export function ImageLargeBlock({ media, width = 960, adaptive = false, objectFit = "cover" }: ImageLargeBlockProps) {
   const basePath = useProjectMediaBase();
   const fullSrc = resolveHref(media.src, basePath);
 
@@ -57,7 +59,7 @@ export function ImageLargeBlock({ media, width = 960, adaptive = false }: ImageL
           poster={media.poster}
           basePath={basePath}
           aspectClassName="h-full w-full"
-          objectFit="cover"
+          objectFit={objectFit}
         />
       </div>
     </div>

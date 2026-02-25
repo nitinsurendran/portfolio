@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Activity, Clock, Cuboid, Cpu, FlaskConical, Hand, Layers, Box, Radio, Sparkles } from "lucide-react";
@@ -73,6 +76,9 @@ export function HeaderBlock({
   overviewRight,
   backHref = "/",
 }: HeaderBlockProps) {
+  const searchParams = useSearchParams();
+  const from = searchParams.get("from");
+  const effectiveBackHref = from === "experiments" ? "/?tab=experiments" : backHref;
   const leftLabels = { ...DEFAULT_LEFT_LABELS, ...overviewLeftLabels };
   // Convert tags to badges if badges not provided (legacy support)
   // If badges are provided, use them; otherwise convert tags to badges
@@ -94,7 +100,7 @@ export function HeaderBlock({
       {/* Back Navigation */}
       <div data-reveal="backNavigation" className="fixed left-[2px] top-px px-[38px] py-[12px] z-[10000]">
         <Link
-          href={backHref}
+          href={effectiveBackHref}
           className="flex items-center justify-center p-[44px] hover:opacity-70 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-md"
           aria-label="Back to homepage"
         >

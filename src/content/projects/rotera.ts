@@ -147,7 +147,6 @@ export const rotera: ProjectContent = {
       content: paragraphs(bodyContent6),
       heading: "Version 4: Embedding Planning Tools Without Breaking the Journey",
     },
-    { type: "Team" },
     { type: "Divider" },
     { type: "OtherProjects" },
     { type: "Footer", variant: "default" },
