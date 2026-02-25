@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useEffect } from "react";
+import { useTheme } from "next-themes";
 import { Description } from "../sections/home/Description";
 import { Header } from "../sections/home/Header";
 import { Intro } from "../sections/home/Intro";
@@ -10,6 +11,13 @@ import { initReveal } from "../lib/gsap/reveal";
 
 export default function Home() {
   const rootRef = useRef<HTMLDivElement>(null);
+  const { setTheme } = useTheme();
+
+  // Force light theme on the homepage on first client render,
+  // regardless of system preference or previous visits.
+  useEffect(() => {
+    setTheme("light");
+  }, [setTheme]);
 
   // Defer GSAP reveal until after first paint; skip if no [data-reveal] elements (perf)
   useEffect(() => {
@@ -33,11 +41,11 @@ export default function Home() {
       {/* MCP: Homepage frame has pt-[144px] (gap-36) and gap-[12px] (gap-3) between children */}
       <div ref={rootRef}>
         <Container>
-        <Header />
-        <Intro />
-        <Description />
-        <SelectProjects />
-        {/* Collabs and Footer are rendered inside each tab (Work + Experiments) so they appear in both */}
+          <Header />
+          <Intro />
+          <Description />
+          <SelectProjects />
+          {/* Collabs and Footer are rendered inside each tab (Work + Experiments) so they appear in both */}
         </Container>
       </div>
     </main>
