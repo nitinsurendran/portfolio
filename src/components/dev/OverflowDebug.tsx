@@ -3,13 +3,12 @@
 import { useEffect } from "react";
 
 /**
- * Dev-only: outlines elements that exceed viewport width (overflow debug).
- * Remove in production; no runtime overhead when NODE_ENV !== "development".
+ * Outlines elements that exceed viewport width (overflow debug).
+ * Only mounted when debug UI is enabled (dev or NEXT_PUBLIC_DEBUG_UI / ?debug=1 in prod).
+ * When disabled, this component is not rendered (no overhead).
  */
 export function OverflowDebug() {
   useEffect(() => {
-    if (process.env.NODE_ENV !== "development") return;
-
     const style = document.createElement("style");
     style.textContent = `
       [data-overflow-debug] {

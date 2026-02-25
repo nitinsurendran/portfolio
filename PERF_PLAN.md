@@ -274,12 +274,10 @@ These are strong candidates for **lazy-loading or environment-gating**.
 
 These are the **next 5 concrete P0 changes** to implement (in later steps), each with why/where/how-to-validate.
 
-1. **Gate debug and cursor layers**
+1. **Gate debug and cursor layers** ✅ *Implemented*
    - **Why:** Reduce global JS and layout work → improves **INP** and general responsiveness across all routes.
    - **Where:** `src/app/client-providers.tsx`, `src/components/dev/OverflowDebug.tsx`, `src/components/motion/CursorLayer.tsx`.
-   - **Change (planned):**
-     - Render `OverflowDebug` only in development.
-     - Optionally lazy-load or conditionally render `CursorLayer` on pointer/hover-capable devices.
+   - **Change (done):** CursorLayer and OverflowDebug are loaded only when `NODE_ENV !== "production"` or `NEXT_PUBLIC_DEBUG_UI=1` or `?debug=1` (persisted in sessionStorage). Both are dynamically imported with `ssr: false` so they never run on the server and their chunks load only when debug UI is enabled. See *Enabling debug UI in production* below.
    - **Validate:**
      - Compare Lighthouse INP on `/` before/after.
      - Use Chrome Performance panel to verify fewer event listeners and less JS on initial load.
@@ -331,7 +329,16 @@ These are the **next 5 concrete P0 changes** to implement (in later steps), each
        - INP
        - Total JS execution time.
 
+### Enabling debug UI in production (P0 #1)
+
+CursorLayer and OverflowDebug are gated: they do not run in production unless explicitly enabled.
+
+- **Build-time:** Set `NEXT_PUBLIC_DEBUG_UI=1` before `next build` (e.g. in `.env.production` or CI) to ship the opt-in; the runtime still only mounts the components when the flag or query is used.
+- **Runtime (no rebuild):** Append `?debug=1` to any page URL (e.g. `https://www.nitinsurendran.com/?debug=1`). The first visit with `?debug=1` persists the choice in `sessionStorage` under the key `debug-ui`, so later navigations in the same tab/session keep debug UI on. Use `?debug=0` to turn it off and clear the stored flag.
+
+In development, debug UI (cursor layer + overflow outlines) is always enabled.
+
 ---
 
-This plan is **audit + roadmap only**. No refactors have been applied yet; all routes and behaviors are unchanged. Subsequent steps should implement the P0 items in small, reviewable PRs, re-running the baseline measurements after each batch.
+This plan is **audit + roadmap only**. P0 #1 (gate debug/cursor layers) has been implemented; other items remain. Subsequent steps should implement the remaining P0 items in small, reviewable PRs, re-running the baseline measurements after each batch.
 
