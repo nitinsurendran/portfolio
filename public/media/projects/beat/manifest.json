@@ -7,8 +7,8 @@
       "badges": [],
       "showHero": true,
       "heroMedia": {
-        "kind": "image",
-        "src": "hero/hero.png"
+        "kind": "video",
+        "src": "hero/hero.mov"
       },
       "overviewLeft": {
         "industry": "Mobility / Ride-hailing",
@@ -72,7 +72,8 @@
     { "type": "text", "contentKey": "intervention1" },
     {
       "type": "imageLarge",
-      "media": { "kind": "image", "src": "sections/experiment-metrics-placeholder.png" }
+      "media": { "kind": "image", "src": "sections/experiment-metrics-placeholder.png" },
+      "objectFit": "contain"
     },
     { "type": "text", "contentKey": "intervention2" },
     { "type": "divider" },
@@ -105,7 +106,7 @@
     { "type": "text", "contentKey": "designingForDeliberateAction" },
     {
       "type": "imageLarge",
-      "media": { "kind": "image", "src": "sections/final.png" }
+      "media": { "kind": "video", "src": "sections/final.mov" }
     },
     { "type": "text", "contentKey": "finalAcceptanceScreen" },
     { "type": "divider" },

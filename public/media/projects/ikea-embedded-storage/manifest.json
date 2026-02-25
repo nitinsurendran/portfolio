@@ -114,7 +114,7 @@
     {
       "type": "imageSmall",
       "left": { "kind": "video", "src": "sections/directions-deprioritised-1-left.mov" },
-      "right": { "kind": "video", "src": "sections/directions-deprioritised-1-right.mov" }
+      "right": { "kind": "image", "src": "sections/directions-deprioritised-1-right.png" }
     },
     {
       "type": "imageSmall",
