@@ -19,7 +19,6 @@ export const metadata: Metadata = {
   },
   description:
     "Portfolio of Nitin Surendran, an interaction designer crafting 3D, spatial, and AI-powered product experiences across commerce, mobility, and immersive systems.",
-  // TODO: Replace /og.jpg with a real 1200x630 social sharing image in public/og.jpg
   openGraph: {
     title: "Nitin Surendran's Portfolio",
     description:
