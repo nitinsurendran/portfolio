@@ -53,12 +53,8 @@ export default function ClientProviders({
   return (
     <>
       {children}
-      {debugUIEnabled && (
-        <>
-          <CursorLayer />
-          <OverflowDebug />
-        </>
-      )}
+      <CursorLayer />
+      {debugUIEnabled && <OverflowDebug />}
     </>
   );
 }
