@@ -23,7 +23,7 @@ export function Intro() {
         <div className="flex flex-wrap gap-3">
           <Button variant="outline" className="w-fit rounded-full gap-2" asChild>
             {/* w-fit prevents button from stretching in flex row parent */}
-            <Link href="/about">
+            <Link href="/about" target="_blank" rel="noopener noreferrer">
               <span>About me</span>
               <ArrowUpRight className="h-4 w-4" />
             </Link>

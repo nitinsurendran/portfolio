@@ -35,7 +35,7 @@ export function AboutWorkHistory() {
               Copenhagen Institute of Interaction Design (CIID)
             </p>
             <p className="font-sans text-base font-normal leading-6 text-muted-foreground">
-              Interaction Design Programme, Feb 2020 - March 2021
+              Master's Interaction Design Programme, Feb 2020 - March 2021
             </p>
           </div>
           <div className="flex flex-col gap-1 mt-3">
