@@ -35,3 +35,25 @@ export function shouldUseVideoThumb(): boolean {
   // Default: use video thumbnails
   return true;
 }
+
+/**
+ * Whether heavy 3D (three/fiber/drei + GLB) is allowed.
+ * Returns false for prefers-reduced-motion, Save-Data, or slow-2g/2g.
+ */
+export function shouldAllowHeavy3D(): boolean {
+  if (typeof window === "undefined") return true;
+
+  const prefersReducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+  if (prefersReducedMotion) return false;
+
+  if (typeof navigator !== "undefined") {
+    const conn = (navigator as Navigator & { connection?: ConnectionLike }).connection;
+    if (conn) {
+      if (conn.saveData === true) return false;
+      const et = conn.effectiveType;
+      if (et === "slow-2g" || et === "2g") return false;
+    }
+  }
+
+  return true;
+}

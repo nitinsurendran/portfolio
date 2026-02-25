@@ -1,23 +1,90 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { Suspense } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
+import { shouldAllowHeavy3D } from "@/lib/media/bandwidth";
+
+const viewerContainerClass =
+  "flex h-40 max-w-[220px] items-center justify-center rounded-md overflow-hidden";
+
+function ViewerPlaceholder({
+  onEnable,
+  allow3D,
+}: {
+  onEnable: () => void;
+  allow3D: boolean;
+}) {
+  return (
+    <div className="w-full h-full min-h-[10rem] flex items-center justify-center bg-muted/30 rounded-md">
+      {allow3D ? (
+        <button
+          type="button"
+          onClick={onEnable}
+          className="text-sm text-muted-foreground hover:text-foreground focus:outline-none focus:ring-2 focus:ring-offset-2 rounded"
+        >
+          Enable 3D
+        </button>
+      ) : null}
+    </div>
+  );
+}
+
+function LoadingFallback() {
+  return (
+    <div className="w-full h-full min-h-[10rem] flex items-center justify-center bg-muted/30 rounded-md">
+      <span className="text-sm text-muted-foreground">Loading…</span>
+    </div>
+  );
+}
 
 const ModelViewer = dynamic(
   () => import("@/components/three/ModelViewer").then((m) => m.default),
-  { ssr: false, loading: () => <div className="text-sm text-muted-foreground">Loading…</div> }
+  { ssr: false, loading: LoadingFallback }
 );
 
 export function Description() {
+  const [enabled, setEnabled] = useState(false);
+  const [inView, setInView] = useState(false);
+  const [allow3D, setAllow3D] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setAllow3D(shouldAllowHeavy3D());
+  }, []);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([e]) => setInView(e.isIntersecting),
+      { rootMargin: "200px", threshold: 0 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  const showViewer = enabled && inView && allow3D;
+
   return (
-    <section className="pt-[30px] pb-[10px]" data-reveal="description">
+    <section
+      className="pt-[30px] pb-[10px]"
+      data-reveal="description"
+      ref={sectionRef}
+    >
       {/* MCP: Description has pt-[30px], pb-[10px], and internal gap-[20px] */}
       <div className="flex flex-col gap-5">
         {/* gap-5 = 20px (MCP gap-[20px]) */}
-        <div className="flex h-40 max-w-[220px] items-center justify-center rounded-md overflow-hidden">
-          <Suspense fallback={<div className="text-sm text-muted-foreground">Loading…</div>}>
-            <ModelViewer src="/models/portfoliochair.glb" />
-          </Suspense>
+        <div className={viewerContainerClass}>
+          {!showViewer ? (
+            <ViewerPlaceholder
+              onEnable={() => setEnabled(true)}
+              allow3D={allow3D}
+            />
+          ) : (
+            <Suspense fallback={<LoadingFallback />}>
+              <ModelViewer src="/models/portfoliochair.glb" />
+            </Suspense>
+          )}
         </div>
         <p className="font-sans text-xl font-normal leading-7 text-foreground">
           {/* MCP: matches Intro paragraph - text-xl (20px), leading-7 (28px), text-foreground (slate-12) */}
@@ -34,4 +101,3 @@ export function Description() {
     </section>
   );
 }
-

@@ -224,6 +224,3 @@ export default function ModelViewer({
   );
 }
 
-// Preload the default model for better performance
-useGLTF.preload("/models/portfoliochair.glb");
-
