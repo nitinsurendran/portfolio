@@ -12,11 +12,15 @@ import { initReveal } from "../lib/gsap/reveal";
 export default function Home() {
   const rootRef = useRef<HTMLDivElement>(null);
   const { setTheme, resolvedTheme } = useTheme();
+  const appliedDefaultRef = useRef(false);
 
-  // Default to light only when theme is still "system" (no user choice yet).
-  // Do not overwrite a deliberate light/dark toggle.
+  // Apply default light once on first load when theme is still "system"; never overwrite toggle.
   useEffect(() => {
-    if (resolvedTheme === "system") setTheme("light");
+    if (appliedDefaultRef.current) return;
+    if (resolvedTheme === "system") {
+      setTheme("light");
+      appliedDefaultRef.current = true;
+    }
   }, [resolvedTheme, setTheme]);
 
   // Defer GSAP reveal until after first paint; skip if no [data-reveal] elements (perf)
