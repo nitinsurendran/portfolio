@@ -11,13 +11,13 @@ import { initReveal } from "../lib/gsap/reveal";
 
 export default function Home() {
   const rootRef = useRef<HTMLDivElement>(null);
-  const { setTheme } = useTheme();
+  const { setTheme, resolvedTheme } = useTheme();
 
-  // Force light theme on the homepage on first client render,
-  // regardless of system preference or previous visits.
+  // Default to light only when theme is still "system" (no user choice yet).
+  // Do not overwrite a deliberate light/dark toggle.
   useEffect(() => {
-    setTheme("light");
-  }, [setTheme]);
+    if (resolvedTheme === "system") setTheme("light");
+  }, [resolvedTheme, setTheme]);
 
   // Defer GSAP reveal until after first paint; skip if no [data-reveal] elements (perf)
   useEffect(() => {

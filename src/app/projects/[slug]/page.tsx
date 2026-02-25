@@ -5,11 +5,6 @@ import { notFound, useParams } from "next/navigation";
 import Container from "@/components/layout/Container";
 import { useRef, useEffect } from "react";
 import { initReveal } from "@/lib/gsap/reveal";
-import { useTheme } from "next-themes";
-import {
-  getStoredThemeBeforeDetail,
-  clearStoredThemeBeforeDetail,
-} from "@/lib/theme-detail";
 import { Separator } from "@/components/ui/separator";
 import { Footer } from "@/sections/home/Footer";
 import { ProjectTitle } from "@/sections/project-details/rotera/ProjectTitle";
@@ -31,19 +26,6 @@ export default function ProjectPage() {
   const rootRef = useRef<HTMLDivElement>(null);
   const { slug } = useParams<{ slug: string }>();
   const project = getProjectBySlug(slug);
-  const { setTheme } = useTheme();
-
-  // Set dark once on mount so toggle can switch to light without this effect re-running. Restore on leave.
-  useEffect(() => {
-    setTheme("dark");
-    return () => {
-      const restore = getStoredThemeBeforeDetail();
-      clearStoredThemeBeforeDetail();
-      setTheme(restore ?? "light");
-    };
-    // Empty deps: run only once per mount so we never overwrite user's theme toggle.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   useEffect(() => {
     if (!rootRef.current) return;

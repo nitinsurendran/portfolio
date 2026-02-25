@@ -2,11 +2,6 @@
 
 import { useEffect, useState, useRef } from "react";
 import Container from "@/components/layout/Container";
-import { useTheme } from "next-themes";
-import {
-  getStoredThemeBeforeDetail,
-  clearStoredThemeBeforeDetail,
-} from "@/lib/theme-detail";
 import { HeroBlock } from "@/components/blocks/HeroBlock";
 import { ImageLargeBlock } from "@/components/blocks/ImageLargeBlock";
 import { ImageSmallBlock } from "@/components/blocks/ImageSmallBlock";
@@ -187,22 +182,11 @@ export default function BeatPage() {
   const [manifest, setManifest] = useState<Manifest | null>(null);
   const [error, setError] = useState<string | null>(null);
   const rootRef = useRef<HTMLDivElement>(null);
-  const { setTheme } = useTheme();
 
   const project = getProjectBySlug("beat");
   const projectBadges = project?.badges;
   const projectTitle = project?.title;
   const projectDescription = project?.description;
-
-  useEffect(() => {
-    setTheme("dark");
-    return () => {
-      const restore = getStoredThemeBeforeDetail();
-      clearStoredThemeBeforeDetail();
-      setTheme(restore ?? "light");
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   useEffect(() => {
     fetch("/media/projects/beat/manifest.json", { cache: "no-store" })

@@ -2,11 +2,6 @@
 
 import { useEffect, useState, useRef } from "react";
 import Container from "@/components/layout/Container";
-import { useTheme } from "next-themes";
-import {
-  getStoredThemeBeforeDetail,
-  clearStoredThemeBeforeDetail,
-} from "@/lib/theme-detail";
 import { HeaderBlock } from "@/components/blocks/HeaderBlock";
 import { DividerBlock } from "@/components/blocks/DividerBlock";
 import { ImageLargeBlock } from "@/components/blocks/ImageLargeBlock";
@@ -128,22 +123,11 @@ export default function IkeaEmbeddedStoragePage() {
   const [manifest, setManifest] = useState<Manifest | null>(null);
   const [error, setError] = useState<string | null>(null);
   const rootRef = useRef<HTMLDivElement>(null);
-  const { setTheme } = useTheme();
 
   const project = getProjectBySlug(PROJECT_SLUG);
   const projectBadges = project?.badges;
   const projectTitle = project?.title;
   const projectDescription = project?.description;
-
-  useEffect(() => {
-    setTheme("dark");
-    return () => {
-      const restore = getStoredThemeBeforeDetail();
-      clearStoredThemeBeforeDetail();
-      setTheme(restore ?? "light");
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   useEffect(() => {
     fetch(`${MEDIA_BASE}/manifest.json`, { cache: "no-store" })

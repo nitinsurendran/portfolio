@@ -2,11 +2,6 @@
 
 import { useEffect, useRef } from "react";
 import Container from "@/components/layout/Container";
-import { useTheme } from "next-themes";
-import {
-  getStoredThemeBeforeDetail,
-  clearStoredThemeBeforeDetail,
-} from "@/lib/theme-detail";
 import { HeaderBlock } from "@/components/blocks/HeaderBlock";
 import { DividerBlock } from "@/components/blocks/DividerBlock";
 import { ImageLargeBlock } from "@/components/blocks/ImageLargeBlock";
@@ -315,18 +310,7 @@ function renderBlock(
 
 export default function FromSingleProductsToComplementarySetsPage() {
   const rootRef = useRef<HTMLDivElement>(null);
-  const { setTheme } = useTheme();
   const project = getProjectBySlug(PROJECT_SLUG);
-
-  useEffect(() => {
-    setTheme("dark");
-    return () => {
-      const restore = getStoredThemeBeforeDetail();
-      clearStoredThemeBeforeDetail();
-      setTheme(restore ?? "light");
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   useEffect(() => {
     const root = rootRef.current;
