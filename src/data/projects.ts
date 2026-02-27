@@ -121,30 +121,7 @@ export const workProjects: Project[] = [
     },
     thumbnailVideoScale: 1.25,
   },
-  // 4. BEAT - Driver's Request Screen
-  {
-    slug: "beat",
-    title: "BEAT - Driver's Request Screen",
-    description:
-      "How small changes in timing, language, and information hierarchy reshaped driver behavior in a real-time marketplace",
-    badges: [
-      {
-        label: "Mobility & Ride-hailing",
-        icon: "sparkles",
-      },
-      {
-        label: "UX Research & Product Design",
-        icon: "layers",
-      },
-    ],
-    year: "2021",
-    type: "work",
-    media: {
-      type: "video",
-      src: "/media/projects/beat/hero/hero.mp4",
-    },
-  },
-  // 5. Cybernetic Landscapes
+  // 4. Cybernetic Landscapes
   {
     slug: "cybernetic-landscapes",
     title: "Cybernetic Landscapes",
@@ -169,6 +146,29 @@ export const workProjects: Project[] = [
     media: {
       type: "image",
       src: "/media/projects/cybernetic-landscapes/hero/hero.png",
+    },
+  },
+  // 5. BEAT - Driver's Request Screen
+  {
+    slug: "beat",
+    title: "BEAT - Driver's Request Screen",
+    description:
+      "How small changes in timing, language, and information hierarchy reshaped driver behavior in a real-time marketplace",
+    badges: [
+      {
+        label: "Mobility & Ride-hailing",
+        icon: "sparkles",
+      },
+      {
+        label: "UX Research & Product Design",
+        icon: "layers",
+      },
+    ],
+    year: "2021",
+    type: "work",
+    media: {
+      type: "video",
+      src: "/media/projects/beat/hero/hero.mp4",
     },
   },
 ];
