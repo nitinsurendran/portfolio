@@ -202,32 +202,6 @@ export const experimentProjects: Project[] = [
     },
   },
   {
-    slug: "digital-rams",
-    title: "Digital Rams",
-    description:
-      "Translating Industrial Design into Spatial Digital Interaction",
-    badges: [
-      {
-        label: "3D Interaction Design",
-        icon: "cuboid",
-      },
-      {
-        label: "Motion & Micro-Interactions",
-        icon: "activity",
-      },
-      {
-        label: "Experimental Prototyping",
-        icon: "flaskConical",
-      },
-    ],
-    year: "2020",
-    type: "experiment",
-    media: {
-      type: "image",
-      src: "/media/projects/digital-rams/hero/hero.png",
-    },
-  },
-  {
     slug: "newten",
     title: "NewTen",
     description:
@@ -251,6 +225,32 @@ export const experimentProjects: Project[] = [
     media: {
       type: "image",
       src: "/media/projects/newten/hero/hero.png", // card thumbnail
+    },
+  },
+  {
+    slug: "digital-rams",
+    title: "Digital Rams",
+    description:
+      "Translating Industrial Design into Spatial Digital Interaction",
+    badges: [
+      {
+        label: "3D Interaction Design",
+        icon: "cuboid",
+      },
+      {
+        label: "Motion & Micro-Interactions",
+        icon: "activity",
+      },
+      {
+        label: "Experimental Prototyping",
+        icon: "flaskConical",
+      },
+    ],
+    year: "2020",
+    type: "experiment",
+    media: {
+      type: "image",
+      src: "/media/projects/digital-rams/hero/hero.png",
     },
   },
 ];
