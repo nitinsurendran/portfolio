@@ -10,6 +10,11 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: __dirname,
   },
+  images: {
+    localPatterns: [
+      { pathname: "/media/**", search: "?v=2" },
+    ],
+  },
   async redirects() {
     return [
       {

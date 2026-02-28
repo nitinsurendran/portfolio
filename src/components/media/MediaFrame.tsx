@@ -3,18 +3,19 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { SmartVideo } from "./SmartVideo";
-import { useProjectMediaBase } from "@/contexts/ProjectMediaBaseContext";
+import { useProjectMediaBase, useProjectMediaCacheBust } from "@/contexts/ProjectMediaBaseContext";
 
 /** Single source of truth for detail-page media frame: 12px rounded corners + overflow-hidden. */
 const MEDIA_FRAME_CLASS = "relative overflow-hidden rounded-[12px]";
 const MEDIA_FRAME_STYLE: React.CSSProperties = { borderRadius: 12, overflow: "hidden" };
 
-function resolveHref(path: string | undefined, base: string): string {
+function resolveHref(path: string | undefined, base: string, cacheBust?: string): string {
   if (!path || path.trim() === "") return "";
   if (path.startsWith("/") || path.startsWith("http")) return path;
   const baseClean = base.replace(/\/$/, "");
   const pathClean = path.replace(/^\//, "");
-  return `${baseClean}/${pathClean}`;
+  const url = `${baseClean}/${pathClean}`;
+  return cacheBust ? `${url}?v=${cacheBust}` : url;
 }
 
 type MediaFrameProps = {
@@ -55,9 +56,10 @@ export function MediaFrame({
 }: MediaFrameProps) {
   const [hasError, setHasError] = useState(false);
   const contextBase = useProjectMediaBase();
+  const cacheBust = useProjectMediaCacheBust();
   const basePath = basePathProp ?? contextBase;
-  const fullSrc = resolveHref(src, basePath);
-  const fullPoster = resolveHref(poster, basePath);
+  const fullSrc = resolveHref(src, basePath, cacheBust);
+  const fullPoster = resolveHref(poster, basePath, cacheBust);
   const inferredKind =
     kind || (fullSrc && /\.(mov|mp4|webm)$/i.test(fullSrc) ? "video" : "image");
 

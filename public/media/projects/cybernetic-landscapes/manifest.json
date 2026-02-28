@@ -185,6 +185,27 @@
       }
     },
     {
+      "type": "imageLarge",
+      "media": {
+        "kind": "image",
+        "src": "sections/goal-9.png"
+      }
+    },
+    {
+      "type": "imageLarge",
+      "media": {
+        "kind": "image",
+        "src": "sections/goal-10.png"
+      }
+    },
+    {
+      "type": "imageLarge",
+      "media": {
+        "kind": "image",
+        "src": "sections/goal-11.png"
+      }
+    },
+    {
       "type": "divider"
     },
     {

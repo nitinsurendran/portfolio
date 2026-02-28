@@ -1,12 +1,13 @@
 import { MediaFrame } from "../media/MediaFrame";
-import { useProjectMediaBase } from "@/contexts/ProjectMediaBaseContext";
+import { useProjectMediaBase, useProjectMediaCacheBust } from "@/contexts/ProjectMediaBaseContext";
 
-function resolveHref(path: string, base: string): string {
+function resolveHref(path: string, base: string, cacheBust?: string): string {
   if (!path || path.trim() === "") return "";
   if (path.startsWith("/") || path.startsWith("http")) return path;
   const baseClean = base.replace(/\/$/, "");
   const pathClean = path.replace(/^\//, "");
-  return `${baseClean}/${pathClean}`;
+  const url = `${baseClean}/${pathClean}`;
+  return cacheBust ? `${url}?v=${cacheBust}` : url;
 }
 
 type ImageLargeBlockProps = {
@@ -24,7 +25,8 @@ type ImageLargeBlockProps = {
 
 export function ImageLargeBlock({ media, width = 960, adaptive = false, objectFit = "cover" }: ImageLargeBlockProps) {
   const basePath = useProjectMediaBase();
-  const fullSrc = resolveHref(media.src, basePath);
+  const cacheBust = useProjectMediaCacheBust();
+  const fullSrc = resolveHref(media.src, basePath, cacheBust);
 
   if (adaptive && media.kind === "image") {
     return (

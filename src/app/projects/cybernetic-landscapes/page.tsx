@@ -178,7 +178,7 @@ export default function CyberneticLandscapesPage() {
   }
 
   return (
-    <ProjectMediaBaseProvider basePath="/media/projects/cybernetic-landscapes">
+    <ProjectMediaBaseProvider basePath="/media/projects/cybernetic-landscapes" cacheBust="2">
       <main className="pt-[144px] pb-0 relative">
         <Container>
           <div ref={rootRef}>

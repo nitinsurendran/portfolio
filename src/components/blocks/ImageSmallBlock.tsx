@@ -1,5 +1,5 @@
 import { MediaFrame } from "../media/MediaFrame";
-import { useProjectMediaBase } from "@/contexts/ProjectMediaBaseContext";
+import { useProjectMediaBase, useProjectMediaCacheBust } from "@/contexts/ProjectMediaBaseContext";
 
 type ImageSmallBlockProps = {
   left: {
